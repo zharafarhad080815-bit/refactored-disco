@@ -1,0 +1,53 @@
+<!--You will build a zoo page that starts with three empty zones. When they click the Open the Zoo! button, JavaScript uses the DOM to fill each zone with an animal name, count the total animals, change the background colour of the zoo, and show a status message using the page title.-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Zoo</title>
+    </head>
+    <body>
+        <h1>Welcome to My Zoo!</h1>
+        <div id="zoo">
+            <div id="zone1" class="zone"></div>
+            <div id="zone2" class="zone"></div>
+            <div id="zone3" class="zone"></div>
+        </div>
+        <button onclick="openZoo()">Open the Zoo!</button>
+        <p id="status-message"></p>
+
+        <script>
+            function openZoo() {
+                // Array of animal names
+                const animals = ["Lion", "Tiger", "Bear", "Elephant", "Giraffe", "Zebra"];
+                
+                // Fill each zone with an animal name
+                document.getElementById("zone1").innerHTML = animals[0];
+                document.getElementById("zone2").innerHTML = animals[1];
+                document.getElementById("zone3").innerHTML = animals[2];
+
+                // Count total animals
+                const totalAnimals = animals.length;
+
+                // Change background color of the zoo
+                document.getElementById("zoo").style.backgroundColor = "#f0e68c";
+
+                // Show status message using the page title
+                document.title = `My Zoo - Total Animals: ${totalAnimals}`;
+                document.getElementById("status-message").innerText = `The zoo is now open! Total animals: ${totalAnimals}`;
+            }
+        </script>
+
+        <style>
+            .zone {
+                width: 200px;
+                height: 100px;
+                border: 1px solid black;
+                margin: 10px;
+                display: inline-block;
+                text-align: center;
+                line-height: 100px;
+            }
+        </style>
+    </body>
+</html>
